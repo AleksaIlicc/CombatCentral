@@ -1,0 +1,20 @@
+.p-button {
+  padding: 0.25rem 1rem;
+  background: #ab1c29;
+  border: 1px solid #ab1c29;
+}
+
+.p-button:focus {
+  box-shadow:
+    0 0 0 1px #ffffff,
+    0 0 0 3px #ab1c2885,
+    0 1px 2px 0 black;
+}
+
+.p-button:focus-visible {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.15rem #ab1c2885;
+}
+
+// Regular styles
