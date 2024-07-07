@@ -4,8 +4,15 @@
 @import 'primeng/resources/themes/lara-light-blue/theme.css';
 @import 'primeng/resources/primeng.css';
 
-body{
-    background-color: #F2F2F0;
-    color:#270808;
-    //#555C73 dobra svetlija siva
+:root {
+  --bg-main: rgb(71 15 15 / 1%);
+  --black: #270808;
+  --light-gray: #555c73;
+  --red: #ab1c29;
+  --transparent-red: #ab1c2985;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--black);
 }
