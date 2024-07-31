@@ -1,6 +1,6 @@
 <div class="flex h-screen items-center justify-center">
   <div
-    class="border-gray-200 w-full max-w-sm rounded-xl border p-4 shadow sm:p-6 md:p-8">
+    class="w-full max-w-sm rounded-xl border border-slate-200 p-4 shadow-xl sm:p-6 md:p-8">
     <form class="space-y-5" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
       <h5 class="text-gray-900 mb-8 text-center text-2xl font-medium">
         Sign up to share your fighting journey with the world.
@@ -44,7 +44,9 @@
             formControlName="experience"
             value="experienced"
             class="border-gray-300 rounded text-red shadow-sm focus:border-transparent-red focus:ring focus:ring-transparent-red focus:ring-opacity-50" />
-          <span class="text-gray-700 ml-2 text-sm">I am experienced competitor</span>
+          <span class="text-gray-700 ml-2 text-sm"
+            >I am experienced competitor</span
+          >
         </label>
         <label class="inline-flex items-center">
           <input
@@ -52,7 +54,9 @@
             formControlName="experience"
             value="inexperienced"
             class="border-gray-300 rounded text-red shadow-sm focus:border-transparent-red focus:ring focus:ring-transparent-red focus:ring-opacity-50" />
-          <span class="text-gray-700 ml-2 text-sm">I have no experience competing</span>
+          <span class="text-gray-700 ml-2 text-sm"
+            >I have no experience competing</span
+          >
         </label>
       </div>
       <button
