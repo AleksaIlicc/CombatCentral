@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './api/auth/auth.module';
 import ormConfig from './config/orm.config';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -13,6 +14,11 @@ import ormConfig from './config/orm.config';
     }),
     TypeOrmModule.forRootAsync({
       useFactory: ormConfig,
+    }),
+    JwtModule.register({
+      secret: process.env.JWT_SECRET,
+      signOptions: { expiresIn: '1d' },
+      global: true,
     }),
     AuthModule,
   ],
