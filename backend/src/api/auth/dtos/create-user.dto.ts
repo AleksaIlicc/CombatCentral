@@ -16,12 +16,12 @@ export class CreateUserDto {
   fullName: string;
   @IsNotEmpty({ message: 'Username is required' })
   @Length(3, 20, { message: 'Username must be between 3 and 30 characters' })
-  @Matches(
-    new RegExp('^[a-zA-Z_](?!.*?\.{2})[\w.]{1,28}[\w]$'),
-    {
-      message: 'Invalid username',
-    }
-  )
+  // @Matches(
+  //   new RegExp('^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{2,29}$'),
+  //   {
+  //     message: 'Invalid username',
+  //   }
+  // )
   username: string;
   @IsNotEmpty({ message: 'Password is required' })
   @Length(8, 20, { message: 'Password must be between 8 and 20 characters' })
