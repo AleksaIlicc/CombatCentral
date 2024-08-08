@@ -1,15 +1,14 @@
 <div class="flex h-screen items-center justify-center">
   <div
     class="w-full max-w-sm rounded-xl border border-slate-200 p-4 shadow-xl sm:p-6 md:p-8">
-    <form class="space-y-5" action="#">
+    <form class="space-y-5" [formGroup]="loginForm" (ngSubmit)="onSumbit()">
       <h5 class="text-gray-900 mb-8 text-center text-2xl font-medium">
         Log in to our platform
       </h5>
       <div>
         <input
           type="email"
-          name="email"
-          id="email"
+          formControlName="email"
           class="bg-gray-50 text-gray-900 block w-full rounded-lg border p-2.5 text-sm focus:border-transparent-red focus:outline-none focus:ring-2 focus:ring-transparent-red"
           placeholder="Your email"
           required />
@@ -17,15 +16,14 @@
       <div>
         <input
           type="password"
-          name="password"
-          id="password"
+          formControlName="password"
           placeholder="Your password"
           class="bg-gray-50 text-gray-900 block w-full rounded-lg border p-2.5 text-sm focus:border-transparent-red focus:outline-none focus:ring-2 focus:ring-transparent-red"
           required />
       </div>
       <button
         type="submit"
-        class="hover:bg-dark-red w-full rounded-lg bg-red px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-transparent-red">
+        class="w-full rounded-lg bg-red px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-dark-red focus:outline-none focus:ring-4 focus:ring-transparent-red">
         Login to your account
       </button>
       <div class="text-gray-500 text-center text-sm font-medium">

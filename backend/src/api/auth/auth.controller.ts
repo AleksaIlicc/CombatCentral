@@ -22,10 +22,15 @@ export class AuthController {
   @Post('/register')
   async register(@Body() body: CreateUserDto) {
     const hashedPassword = await bcrypt.hash(body.password, 11);
-    return this.authService.create({
+
+    const user = this.authService.create({
       ...body,
       password: hashedPassword,
     });
+
+    const { password, ...result } = await user;
+
+    return result;
   }
 
   @Post('/login')
