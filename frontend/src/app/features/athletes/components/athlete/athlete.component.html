@@ -1,1 +1,8 @@
-<p>athlete works!</p>
+<div class="m-4 flex w-52 flex-col items-center md:w-56">
+  <img
+    src={{athlete.imgSrc}}
+    class="mb-2 aspect-square h-32 w-32 cursor-pointer rounded-full object-cover hover:scale-110" />
+  <h1>{{ athlete.fullName }}</h1>
+  <span>{{ athlete.sport }}</span>
+  <span>{{ athlete.country }}</span>
+</div>

@@ -1,1 +1,5 @@
-<p>athlete-list works!</p>
+<div class="flex flex-wrap justify-center">
+  <div *ngFor="let athlete of athletes">
+    <app-athlete [athlete]="athlete"></app-athlete>
+  </div>
+</div>
