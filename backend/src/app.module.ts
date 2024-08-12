@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './api/auth/auth.module';
 import ormConfig from './config/orm.config';
 import { JwtModule } from '@nestjs/jwt';
+import { AthletesModule } from './api/athletes/athletes.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { JwtModule } from '@nestjs/jwt';
       global: true,
     }),
     AuthModule,
+    AthletesModule,
   ],
   controllers: [],
   providers: [],
