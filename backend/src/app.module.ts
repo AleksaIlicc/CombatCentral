@@ -5,6 +5,7 @@ import { AuthModule } from './api/auth/auth.module';
 import ormConfig from './config/orm.config';
 import { JwtModule } from '@nestjs/jwt';
 import { AthletesModule } from './api/athletes/athletes.module';
+import { EventsModule } from './api/events/events.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AthletesModule } from './api/athletes/athletes.module';
     }),
     AuthModule,
     AthletesModule,
+    EventsModule,
   ],
   controllers: [],
   providers: [],
