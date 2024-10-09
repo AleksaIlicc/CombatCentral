@@ -13,6 +13,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/athletes/athletes.module').then(m => m.AthletesModule),
   },
+  {
+    path: 'events',
+    loadChildren: () =>
+      import('./features/events/events.module').then(m => m.EventsModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/admin/admin.module').then(m => m.AdminModule),
+  },
   { path: '', component: HomeComponent },
   {
     path: '**',
