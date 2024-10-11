@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+
 import { ButtonModule } from 'primeng/button';
 
 @Component({
@@ -8,7 +9,13 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   standalone: true,
-  imports: [CommonModule, ButtonModule, RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+  ],
   encapsulation: ViewEncapsulation.None,
 })
 export class NavbarComponent {}

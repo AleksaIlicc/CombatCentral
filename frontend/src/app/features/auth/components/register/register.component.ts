@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { AuthService } from '../../services/auth.service';
 import { RegisterForm } from '../../interfaces/auth.interfaces';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router,
+    private router: Router
   ) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -26,7 +27,7 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    const user : RegisterForm = this.signupForm.value;
+    const user: RegisterForm = this.signupForm.value;
     this.authService.register(user).subscribe({
       next: response => {
         console.log(response);
