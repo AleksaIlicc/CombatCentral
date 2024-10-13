@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
-import { AthletesService } from '../../services/athletes.service';
+import { AppState } from '../../../../store/app.state';
 
 @Component({
   selector: 'app-athlete-list',
@@ -10,11 +11,13 @@ import { AthletesService } from '../../services/athletes.service';
 export class AthleteListComponent {
   athletes: any = [];
 
-  constructor(private readonly athletesService: AthletesService) {}
+  constructor(private readonly store: Store<AppState>) {}
 
   ngOnInit() {
-    this.athletesService.getAthletes().subscribe(athletes => {
-      this.athletes = athletes;
-    });
+    // this.athletesService.getAthletes().subscribe(athletes => {
+    //   this.athletes = athletes;
+    // });
+
+    this.athletes = this.store.select('athletes');
   }
 }
