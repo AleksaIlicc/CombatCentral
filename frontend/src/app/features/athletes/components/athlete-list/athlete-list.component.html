@@ -1,5 +1,5 @@
 <div class="flex flex-wrap justify-center">
-  <div *ngFor="let athlete of athletes">
+  <div *ngFor="let athlete of athletes | async">
     <app-athlete [athlete]="athlete"></app-athlete>
   </div>
 </div>
