@@ -1,5 +1,3 @@
 export interface AthletesState {
-    athletes: any[];
+  athletes: any;
 }
-
-

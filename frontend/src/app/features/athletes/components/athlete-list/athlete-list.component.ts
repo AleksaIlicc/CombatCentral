@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { map, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
-import { AthletesState } from '../../../../store/athletes/athletes.state';
 import { AppState } from '../../../../store/app.state';
+import { selectAthletesList } from '../../../../store/athletes/athletes.selectors';
 
 @Component({
   selector: 'app-athlete-list',
@@ -11,13 +11,11 @@ import { AppState } from '../../../../store/app.state';
   styleUrl: './athlete-list.component.scss',
 })
 export class AthleteListComponent {
-  athletes: Observable<any> = of([]);
+  athletes$: Observable<any> = of([]);
 
   constructor(private readonly store: Store<AppState>) {}
 
   ngOnInit() {
-    this.athletes = this.store
-      .select('athletes')
-      .pipe(map((state: AthletesState) => state.athletes));
+    this.athletes$ = this.store.select(selectAthletesList);
   }
 }
