@@ -6,6 +6,8 @@ export class AthletesService {
   constructor(private httpClient: HttpClient) {}
 
   getAthletes() {
-    return this.httpClient.get('http://localhost:3000/athletes/find-all');
+    return this.httpClient.get<{ athletes: any[] }>(
+      'http://localhost:3000/athletes/find-all'
+    );
   }
 }

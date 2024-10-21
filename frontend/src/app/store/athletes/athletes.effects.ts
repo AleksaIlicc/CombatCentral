@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, from, map, switchMap } from 'rxjs';
+import { catchError, map, of, switchMap } from 'rxjs';
 
 import { AthletesService } from '../../features/athletes/services/athletes.service';
 import * as AthletesActions from './athletes.actions';
@@ -16,12 +16,14 @@ export class AthletesEffects {
     this.actions$.pipe(
       ofType(AthletesActions.getAthletes),
       switchMap(() =>
-        from(
-          this.athletesService
-            .getAthletes()
-            .pipe(
-              map(athletes => AthletesActions.getAthletesSuccess({ athletes }))
-            )
+        this.athletesService.getAthletes().pipe(
+          map(athletes => {
+            console.log(athletes);
+            return AthletesActions.getAthletesSuccess({ athletes });
+          }),
+          catchError(() =>
+            of(AthletesActions.getAthletesSuccess({ athletes: [] }))
+          )
         )
       )
     )
