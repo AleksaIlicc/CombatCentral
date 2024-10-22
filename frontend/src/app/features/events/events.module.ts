@@ -9,9 +9,11 @@ import { EventsRoutingModule } from './events-routing.module';
 import { EventsService } from './services/events.service';
 import { eventsReducer } from '../../store/events/events.reducer';
 import { EventsEffects } from '../../store/events/events.effects';
+import { EventListComponent } from './components/event-list/event-list.component';
+import { EventComponent } from './components/event/event.component';
 
 @NgModule({
-  declarations: [EventsComponent],
+  declarations: [EventsComponent, EventListComponent, EventComponent],
   imports: [
     CommonModule,
     EventsRoutingModule,

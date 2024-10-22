@@ -8,13 +8,10 @@ export class Event {
   @Column()
   title: string;
 
-  @Column()
-  description: string;
-
   @Column() // change to Date type
   date: string;
 
-  @Column()
+  @Column() // city + country
   location: string;
 
   @Column()

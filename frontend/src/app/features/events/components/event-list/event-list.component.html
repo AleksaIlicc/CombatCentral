@@ -1,0 +1,6 @@
+<div class="">
+  <!-- flex w-full justify-center -->
+  <div *ngFor="let event of events$ | async">
+    <app-event [event]="event"></app-event>
+  </div>
+</div>
